@@ -1,0 +1,15 @@
+{
+  "name": "BaitSec",
+  "version": "0.0.0.1",
+  "manifest_version": 3,
+  "description": "A browser extension that educates and protects against social engineering attacks.",
+  "icons": {
+      "16": "images/BaitSecLogo16.png",
+      "32": "images/BaitSecLogo32.png",
+      "48": "images/BaitSecLogo48.png",
+      "128": "images/BaitSecLogo128.png"
+  },
+  "action": {
+      "default_popup": "popup/popup.html"
+  }
+}

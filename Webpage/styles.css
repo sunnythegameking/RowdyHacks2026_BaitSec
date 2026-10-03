@@ -1,0 +1,129 @@
+/* --- Global Reset & Variables --- */
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --card-hover-bg: #334155;
+  --primary-accent: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  --radius: 12px;
+  --transition: all 0.25s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Typography & Headers --- */
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+}
+
+h1:not(:first-of-type) {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* --- Logo Styling --- */
+body > img {
+  display: block;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto 2.5rem auto;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.2));
+}
+
+/* --- Grid Container --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* --- Scam Cards --- */
+.scam-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.scam-card:hover {
+  transform: translateY(-4px);
+  background-color: var(--card-hover-bg);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-accent);
+}
+
+/* Card Images */
+.scam-card .media {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Card Links */
+.scam-card a {
+  padding: 1.25rem 1rem;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.scam-card a:hover {
+  color: var(--primary-accent);
+}
+
+/* Card Icon Positioning */
+.scam-card .nuxt-icon {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1rem;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.scam-card .nuxt-icon svg {
+  fill: var(--text-muted);
+  transition: var(--transition);
+}
+
+.scam-card:hover .nuxt-icon svg {
+  fill: var(--primary-accent);
+  transform: translateX(3px);
+}

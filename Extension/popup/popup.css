@@ -1,0 +1,24 @@
+body {
+    width: 300px;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    background-color: #f9f9f9;
+}
+h3 { color: #1e3a8a; margin-top: 0; }
+.status-box {
+    padding: 10px;
+    background: #e0f2fe;
+    border: 1px solid #7dd3fc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+button {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover { background-color: #1d4ed8; }

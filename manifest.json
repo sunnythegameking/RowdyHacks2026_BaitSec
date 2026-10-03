@@ -12,4 +12,10 @@
   "action": {
       "default_popup": "popup/popup.html"
   }
+
+{
+  "optional_host_permissions": [
+    "https://*/*"
+  ]
+}
 }

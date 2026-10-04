@@ -230,5 +230,7 @@ nav a:hover {
 }
 
 .top_banner_pic {
-  height: 75px; /* Adjust to fit your navbar height */
-  width: 200px;
+  height: 70px; /* Adjust to fit your navbar height */
+  width: 70px;
+  padding: 7px;
+}

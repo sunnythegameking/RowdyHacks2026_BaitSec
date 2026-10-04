@@ -2,7 +2,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   const urlDisplay = document.getElementById('current-url');
   const scanBtn = document.getElementById('scan-btn');
   const resultContainer = document.getElementById('result-container');
+  // Add this inside popup.js
+  document.addEventListener('DOMContentLoaded', () => {
+  const learnBtn = document.getElementById('learn-btn');
 
+  if (learnBtn) {
+    learnBtn.addEventListener('click', () => {
+      chrome.tabs.create({ url: 'https://baitsec.vercel.app/BaitSec.html' });
+    });
+  }
+});
   // Get active tab URL
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   if (tab && tab.url) {

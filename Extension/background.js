@@ -111,7 +111,7 @@ function checkHeuristics(urlStr) {
  * Safe Browsing API v4 lookup
  */
 async function checkSafeBrowsingApi(targetUrl) {
-  if (!SAFE_BROWSING_KEY || SAFE_BROWSING_KEY.startsWith('AQ.') || SAFE_BROWSING_KEY === 'YOUR_GOOGLE_CLOUD_API_KEY_HERE') {
+  if (!SAFE_BROWSING_KEY || SAFE_BROWSING_KEY.startsWith('AQ.') || SAFE_BROWSING_KEY === 'AIzaSyBZ6hvJoezlEfpUo45iSC-yXsYTBdlCCB0') {
     return { isThreat: false, reason: 'Invalid or Missing Google Cloud API Key' };
   }
 

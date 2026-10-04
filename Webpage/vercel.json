@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "*.css", "use": "@vercel/static" },
+    { "src": "images/**", "use": "@vercel/static" },
+    { "src": "Video/**", "use": "@vercel/static" },
+    { "src":"script.js", "use":"@vercel/static"}
+  ],
+  "routes": [
+    { "src": "^/images/(.*)$", "dest": "/images/$1" },
+    { "src": "^/Video/(.*)$", "dest": "/Video/$1" },
+    { "src": "^/$", "dest": "/Omira.html" },
+    { "src": "^/Omira.html$", "dest": "/Omira.html" },
+    { "src": "^/about.html$", "dest": "/about.html" },
+    { "src": "^/Subsricptions.html$", "dest": "/Subsricptions.html" },
+    { "src": "^/FAQs.html$", "dest": "/FAQs.html" },
+    { "src": "^/Buy.html$", "dest": "/Buy.html" },
+    { "src": "^/script.js$", "dest": "/script.js" }
+  ]
+}

@@ -72,6 +72,7 @@ body > img {
   border-radius: 15px;
   padding: 35px 30px; /* Increased padding for larger cards */
   text-align: center; /* Centers text inside the columns */
+  justify-content: center;
   width: 100%;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);

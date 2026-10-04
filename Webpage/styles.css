@@ -146,3 +146,89 @@ body > img {
   fill: var(--primary-accent);
   transform: translateX(3px);
 }
+
+/* ====================
+   Navigation Bar
+==================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  padding: 30px 50px;
+  width: 100%;
+  border-radius: 20px;
+  z-index: 1000;
+  height: auto;
+}
+
+
+nav {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+}
+
+nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #444;
+  text-decoration: underline;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #f8fafc ;
+  border-radius: 15px;
+  border: 5px #ea1161;
+}
+
+.nav-left {
+  padding-left: 10px; /* logo hugs left */
+  display: flex;
+  align-items: center;
+}
+
+.nav-aboutroca-two-bold.ttf{
+  position: absolute;
+  left: 30%;
+  transform: translateX(-70%);/*perfectly cenjlsjdlsdjfljdfldjlfdj */
+  display: flex;
+  justify-content: center;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* perfectly center the nav links */
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  font-size: 2.5vw;
+  color:#B00A0A;
+}
+
+
+
+.nav-logo {
+  margin-right: auto;   
+}
+
+.top_banner_pic {
+  height: 75px; /* Adjust to fit your navbar height */
+  width: 200px;

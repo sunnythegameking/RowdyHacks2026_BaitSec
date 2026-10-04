@@ -2,17 +2,22 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://jquery.com"></script>
+  <style>
+    body { width: 300px; font-family: sans-serif; padding: 12px; margin: 0; }
+    .status { padding: 10px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+    .safe { background-color: #d4edda; color: #155724; }
+    .danger { background-color: #f8d7da; color: #721c24; }
+    .warning { background-color: #fff3cd; color: #856404; margin-top: 8px; font-weight: normal; font-size: 12px; }
+    button { width: 100%; padding: 8px; margin-top: 10px; cursor: pointer; }
+    .url-display { font-size: 11px; color: #555; word-break: break-all; margin-top: 4px; }
+  </style>
 </head>
 <body>
-  <h3><img src="\images\BaitSecLogoOriginal.png" style="height: 100px; width: 100px;">BaitSec Shield</h3>
-  <div class="status-box">
-    <p>Status: <strong>Active</strong></p>
-  </div>
-  <button id="scanBtn">Scan Current Page</button>
+  <h3>Site Security Check</h3>
+  <div class="url-display" id="current-url">Loading active page...</div>
+  <button id="scan-btn">Scan This Page</button>
+  <div id="result-container"></div>
 
-  <!-- Crucial: Link your JavaScript file -->
   <script src="popup.js"></script>
 </body>
 </html>

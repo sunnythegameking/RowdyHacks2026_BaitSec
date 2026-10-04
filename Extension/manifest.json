@@ -2,7 +2,17 @@
   "name": "BaitSec",
   "version": "1.0.0",
   "manifest_version": 3,
-  "description": "A browser extension that educates and protects against social engineering attacks.",
+  "description": "Scans active tab URLs to detect malicious sites and brand impersonation clones.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://safebrowsing.googleapis.com/*",
+    "<all_urls>"
+  ],
   "icons": {
     "16": "images/logo16.png",
     "32": "images/logo32.png",
@@ -20,8 +30,5 @@
   },
   "background": {
     "service_worker": "background.js"
-  },
-  "optional_host_permissions": [
-    "https://*/*"
-  ]
+  }
 }

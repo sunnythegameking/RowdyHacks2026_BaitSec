@@ -8,7 +8,7 @@ if (window.location.protocol == 'http:') {
         window.location.href.replace(
                 'http:', 'https:');
 }
-else
+else if
     (window.location.protocol == "https:") {
         console.log("you are accessing us via"
             + " our secure HTTPS protocol.");

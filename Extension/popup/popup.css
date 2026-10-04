@@ -17,7 +17,6 @@
 body {
     width: 340px; /* Slightly widened to comfortably fit the top-right button */
     font-family: Verdana, sans-serif;
-    background: linear-gradient(180deg, rgba(234, 97, 17, 1) 0%, rgba(237, 123, 57, 1) 0%, rgba(255, 255, 255, 1) 87%);
     color: var(--text-main);
     padding: 16px;
     margin: 0;
@@ -50,9 +49,10 @@ h3 {
 
 /* Buttons */
 .btn {
-    border: none;
+    border: 5px #ea1161;
     border-radius: 8px;
     font-family: Verdana, sans-serif;
+    color: white;
     font-size: 0.85rem;
     font-weight: bold;
     cursor: pointer;

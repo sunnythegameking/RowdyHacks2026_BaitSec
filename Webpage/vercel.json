@@ -11,6 +11,7 @@
     { "src": "^/Video/(.*)$", "dest": "/Video/$1" },
     { "src": "^/$", "dest": "/BaitSec.html" },
     { "src": "^/BaitSec.html$", "dest": "/BaitSec.html" },
-    { "src": "^/Education.html$", "dest": "/Education.html" }
+    { "src": "^/Education.html$", "dest": "/Education.html" },
+    { "src": "^/MeetTheDevs.html$", "dest": "/MeetTheDevs.html" }
   ]
 }

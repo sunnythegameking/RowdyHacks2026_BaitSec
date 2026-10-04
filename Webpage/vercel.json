@@ -4,18 +4,17 @@
     { "src": "*.html", "use": "@vercel/static" },
     { "src": "*.css", "use": "@vercel/static" },
     { "src": "images/**", "use": "@vercel/static" },
-    { "src": "Video/**", "use": "@vercel/static" },
-    { "src":"script.js", "use":"@vercel/static"}
+    { "src": "Video/**", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "^/images/(.*)$", "dest": "/images/$1" },
     { "src": "^/Video/(.*)$", "dest": "/Video/$1" },
-    { "src": "^/$", "dest": "/Omira.html" },
-    { "src": "^/Omira.html$", "dest": "/Omira.html" },
-    { "src": "^/about.html$", "dest": "/about.html" },
-    { "src": "^/Subsricptions.html$", "dest": "/Subsricptions.html" },
-    { "src": "^/FAQs.html$", "dest": "/FAQs.html" },
-    { "src": "^/Buy.html$", "dest": "/Buy.html" },
-    { "src": "^/script.js$", "dest": "/script.js" }
+    { "src": "^/$", "dest": "/BaitSec.html" },
+    { "src": "^/BaitSec.html$", "dest": "/BaitSec.html" },
+    { "src": "^/asking-for-money.html$", "dest": "/asking-for-money.html" },
+    { "src": "^/asking-for-personal-information.html$", "dest": "/asking-for-personal-information.html" },
+    { "src": "^/offering unexpected opportunities.html$", "dest": "/offering unexpected opportunities.html" },
+    { "src": "^/sending-unsolicited-messages.html$", "dest": "/sending-unsolicited-messages.html" },
+    { "src": "^/Social_Enginering.html$", "dest": "/Social_Enginering.html" }
   ]
 }

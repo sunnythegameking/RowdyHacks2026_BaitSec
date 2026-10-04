@@ -78,6 +78,7 @@ body > img {
   padding: 25px;
   margin: 20px;
   min-width: 75px;
+  max-width: 50%;
   
 }
 

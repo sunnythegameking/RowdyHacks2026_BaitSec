@@ -74,6 +74,11 @@ body > img {
   background-color: #f8fafc;
   border: 10px solid #ea1161;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  margin: 20px;
+  min-width: 75px;
   
 }
 

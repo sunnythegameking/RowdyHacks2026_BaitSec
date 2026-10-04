@@ -72,8 +72,8 @@ body > img {
 .layout {
   flex: 1;
   background-color: #f8fafc;
-  border: 15px solid #ea1161;
-  border-radius: 10px;
+  border: 10px solid #ea1161;
+  border-radius: 15px;
   
 }
 

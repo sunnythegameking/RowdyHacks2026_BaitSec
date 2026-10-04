@@ -269,36 +269,72 @@ nav a:hover {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 32px;
-    font-weight: bold;
-    color: #aaa;
-    cursor: pointer;
-    transition: color 0.2s ease;
-    line-height: 1;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  line-height: 1;
 }
 
 .close-btn:hover {
-    color: #fff;
+  color: #fff;
 }
 
 /* Make cards clickable */
 .scam-card {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .modal-content a {
-    color: #4da6ff;
-    text-decoration: underline;
+  color: #4da6ff;
+  text-decoration: underline;
 }
 
 .modal-content a:hover {
-    color: #80c1ff;
+  color: #80c1ff;
+}.profile-pic-container {
+width: 150px;
+height: 150px;
+overflow: hidden;
+border-radius: 50%;
+
+/* Centering line: */
+margin: 0 auto; 
+}
+
+.profile-pic-container img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Container to make the initial crop a square */
+.profile-pic-container {
+width: 150px;  /* Set your desired diameter here */
+height: 150px; /* Must match the width */
+overflow: hidden; /* Hide anything outside the circle */
+border-radius: 50%; /* This creates the circle mask */
+
+/* Optional: Adds a subtle border or shadow */
+border: 3px solid #fff;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Ensure the image fills the square container */
+.profile-pic-container img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Crucial: maintains aspect ratio and fills the space */
+display: block; /* Removes bottom alignment gap */
+
 }

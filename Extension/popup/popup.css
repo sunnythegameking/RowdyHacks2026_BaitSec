@@ -1,24 +1,134 @@
+:root {
+    --primary-accent: #ea1161;
+    --primary-accent-hover: #c40e50;
+    --text-main: #B00A0A;
+    --card-bg: #f8fafc;
+    --border-color: #334155;
+    --radius: 12px;
+    --transition: all 0.2s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    width: 300px;
-    font-family: Garamond, serif;
-    margin: 10px;
-    background-color: #f9f9f9;
+    width: 340px; /* Slightly widened to comfortably fit the top-right button */
+    font-family: Verdana, sans-serif;
+    background: linear-gradient(180deg, rgba(234, 97, 17, 1) 0%, rgba(237, 123, 57, 1) 0%, rgba(255, 255, 255, 1) 87%);
+    color: var(--text-main);
+    padding: 16px;
+    margin: 0;
 }
-h3 { color: #1e3a8a; margin-top: 0; }
-.status-box {
-    padding: 10px;
-    background: #e0f2fe;
-    border: 1px solid #7dd3fc;
-    border-radius: 5px;
-    margin-bottom: 10px;
+
+.popup-card {
+    background-color: var(--card-bg);
+    border: 4px solid var(--primary-accent);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-button {
-    width: 100%;
-    background-color: #2563eb;
-    color: white;
+
+/* Header Row Layout */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+    text-align: left;
+}
+
+/* Buttons */
+.btn {
     border: none;
-    padding: 8px;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-family: Verdana, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: var(--transition);
 }
-button:hover { background-color: #1d4ed8; }
+
+/* Compact Top-Right Button */
+.btn-compact {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-secondary {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #1e293b;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--primary-accent);
+    color: #ffffff;
+    margin-top: 12px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-accent-hover);
+}
+
+/* URL Display */
+.url-display {
+    font-size: 0.75rem;
+    color: #4a5568;
+    word-break: break-all;
+    margin-top: 8px;
+    background: rgba(0, 0, 0, 0.04);
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Dynamic Result Alerts */
+.status {
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.safe {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    margin-top: 8px;
+    font-weight: normal;
+    font-size: 0.75rem;
+    text-align: left;
+}

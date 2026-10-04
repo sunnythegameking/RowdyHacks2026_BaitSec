@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const urlDisplay = document.getElementById('current-url');
   const scanBtn = document.getElementById('scan-btn');
-  const resultContainer = document.getElementById('result-container');
-  // Add this inside popup.js
-  document.addEventListener('DOMContentLoaded', () => {
   const learnBtn = document.getElementById('learn-btn');
+  const resultContainer = document.getElementById('result-container');
 
+  // Handle "Learn How Not To Be Scammed" Button Click
   if (learnBtn) {
     learnBtn.addEventListener('click', () => {
       chrome.tabs.create({ url: 'https://baitsec.vercel.app/BaitSec.html' });
     });
   }
-});
+
   // Get active tab URL
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  
   if (tab && tab.url) {
     urlDisplay.textContent = tab.url;
   } else {
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
+  // Handle "Scan This Page" Button Click
   scanBtn.addEventListener('click', () => {
     resultContainer.innerHTML = 'Scanning...';
 
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           if (response.heuristicWarning) {
             html += `<div class="warning"><strong>Spoof Warning:</strong> ${response.heuristicWarning}</div>`;
           }
-          if (response.threats.length > 0) {
+          if (response.threats && response.threats.length > 0) {
             html += `<div class="warning"><strong>Known Threat:</strong> ${response.threats[0].threatType}</div>`;
           }
           resultContainer.innerHTML = html;

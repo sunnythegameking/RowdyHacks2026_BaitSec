@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <style>
-    body { width: 300px; font-family: sans-serif; padding: 12px; margin: 0; }
-    .status { padding: 10px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
-    .safe { background-color: #d4edda; color: #155724; }
-    .danger { background-color: #f8d7da; color: #721c24; }
-    .warning { background-color: #fff3cd; color: #856404; margin-top: 8px; font-weight: normal; font-size: 12px; }
-    button { width: 100%; padding: 8px; margin-top: 10px; cursor: pointer; }
-    .url-display { font-size: 11px; color: #555; word-break: break-all; margin-top: 4px; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <h3>Site Security Check</h3>
-  <button id="learn-btn">Learn How Not To Be Scammed</button>
-  <div class="url-display" id="current-url">Loading active page...</div>
-  <button id="scan-btn">Scan This Page</button>
-  <div id="result-container"></div>
+
+  <div class="popup-card">
+    <!-- Header + Top Right Button Container -->
+    <div class="header-row">
+      <h3>Site Security Check</h3>
+      <button class="btn btn-secondary btn-compact" id="learn-btn">Learn More</button>
+    </div>
+    
+    <div class="url-display" id="current-url">Loading active page...</div>
+    
+    <button class="btn btn-primary" id="scan-btn">Scan This Page</button>
+    
+    <div id="result-container"></div>
+  </div>
 
   <script src="popup.js"></script>
 </body>

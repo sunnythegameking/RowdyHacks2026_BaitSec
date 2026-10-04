@@ -65,6 +65,9 @@ h3 {
     padding: 6px 10px;
     white-space: nowrap;
     flex-shrink: 0;
+    border-radius: 8px;
+    font-family: Verdana, sans-serif;
+    color: white;
 }
 
 .btn-secondary {

@@ -63,6 +63,22 @@ body > img {
   margin-top: 1.5rem;
 }
 
+.maincontainer {
+  display: flex;
+  gap: 16px;
+  width: 100%
+}
+
+.layout {
+  flex: 1;
+  background-color: #f8fafc;
+  border: 15px solid #ea1161;
+  border-radius: 15px;
+  
+}
+
+.grow1 { flex-grow: 1; }
+
 /* --- Scam Cards --- */
 .scam-card {
   background-color: var(--card-bg);

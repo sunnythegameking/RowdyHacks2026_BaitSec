@@ -15,6 +15,7 @@
     { "src": "^/asking-for-personal-information.html$", "dest": "/asking-for-personal-information.html" },
     { "src": "^/offering unexpected opportunities.html$", "dest": "/offering unexpected opportunities.html" },
     { "src": "^/sending-unsolicited-messages.html$", "dest": "/sending-unsolicited-messages.html" },
-    { "src": "^/Social_Enginering.html$", "dest": "/Social_Enginering.html" }
+    { "src": "^/Social_Enginering.html$", "dest": "/Social_Enginering.html" },
+    { "src": "^/Education.html$", "dest": "/Education.html" }
   ]
 }

@@ -3,10 +3,12 @@
   "builds": [
     { "src": "*.html", "use": "@vercel/static" },
     { "src": "*.css", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" }
+    { "src": "images/**", "use": "@vercel/static" },
+    { "src": "Video/**", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "^/Website_Images/(.*)$", "dest": "/Website_Images/$1" },
+    { "src": "^/images/(.*)$", "dest": "/images/$1" },
+    { "src": "^/Video/(.*)$", "dest": "/Video/$1" },
     { "src": "^/$", "dest": "/BaitSec.html" },
     { "src": "^/BaitSec.html$", "dest": "/BaitSec.html" },
     { "src": "^/asking-for-money.html$", "dest": "/asking-for-money.html" },

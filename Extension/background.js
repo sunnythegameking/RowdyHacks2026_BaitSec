@@ -1,54 +1,38 @@
-// background.js
-
-// ⚠️ REQUIRED: Get a valid Google Cloud API key starting with 'AIzaSy...' from:
-// https://console.cloud.google.com/apis/credentials
+// Replace with your real Google Safe Browsing API key from GCP Console
 const SAFE_BROWSING_KEY = 'AIzaSyBZ6hvJoezlEfpUo45iSC-yXsYTBdlCCB0';
 
-// In-memory cache to prevent spamming API requests on repeated visits
 const scanCache = new Map();
 
 /**
- * 1. Listen for page navigation events (Automatic trigger)
+ * 1. Automatic Navigation Trigger
  */
 chrome.webNavigation.onCommitted.addListener(async (details) => {
   if (details.frameId !== 0) return;
-
-  const url = details.url;
-  if (!isValidUrl(url)) return;
-
-  await evaluateUrl(details.tabId, url);
+  if (!isValidUrl(details.url)) return;
+  await evaluateUrl(details.tabId, details.url);
 });
 
 /**
- * 2. Listen for tab updates (Catches SPA transitions)
+ * 2. SPA Tab Update Listener
  */
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status === 'complete' && tab.url && isValidUrl(tab.url)) {
+  if (changeInfo.status === 'complete' && tab && tab.url && isValidUrl(tab.url)) {
     evaluateUrl(tabId, tab.url);
   }
 });
 
 /**
- * 3. Listen for manual scan requests from popup.js
+ * 3. Manual Scan Request Listener
  */
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'CHECK_URL') {
-    (async () => {
-      try {
-        const result = await handleManualScan(request.url);
-        sendResponse(result);
-      } catch (err) {
-        sendResponse({ success: false, error: err.message || 'Scan failed' });
-      }
-    })();
-
-    return true; // Keeps async response channel open
+    handleManualScan(request.url)
+      .then((res) => sendResponse(res))
+      .catch((err) => sendResponse({ success: false, error: err.message }));
+    return true; // Keep channel open
   }
 });
 
-/**
- * Core evaluation pipeline
- */
 async function evaluateUrl(tabId, url) {
   if (scanCache.has(url)) {
     const cached = scanCache.get(url);
@@ -73,9 +57,6 @@ async function evaluateUrl(tabId, url) {
   }
 }
 
-/**
- * Brand Impersonation & Typosquatting Heuristics
- */
 function checkHeuristics(urlStr) {
   try {
     const hostname = new URL(urlStr).hostname.toLowerCase();
@@ -107,15 +88,13 @@ function checkHeuristics(urlStr) {
   return { flagged: false };
 }
 
-/**
- * Safe Browsing API v4 lookup
- */
 async function checkSafeBrowsingApi(targetUrl) {
-  if (!SAFE_BROWSING_KEY || SAFE_BROWSING_KEY.startsWith('AQ.') || SAFE_BROWSING_KEY === 'AIzaSyBZ6hvJoezlEfpUo45iSC-yXsYTBdlCCB0') {
-    return { isThreat: false, reason: 'Invalid or Missing Google Cloud API Key' };
+  if (!SAFE_BROWSING_KEY || SAFE_BROWSING_KEY.includes('YOUR_KEY')) {
+    console.warn('BaitSec: Missing API Key');
+    return { isThreat: false, reason: 'Missing API Key' };
   }
 
-  // Normalize test suite endpoints to http:// scheme
+  // Safe Browsing API test URLs require http:// scheme
   let urlToTest = targetUrl;
   if (urlToTest.includes('testsafebrowsing.appspot.com')) {
     urlToTest = urlToTest.replace('https://', 'http://');
@@ -141,8 +120,8 @@ async function checkSafeBrowsingApi(targetUrl) {
     });
 
     if (!res.ok) {
-      console.error(`Safe Browsing API Error: Status ${res.status}`);
-      return { isThreat: false, reason: `API Error (Status ${res.status})` };
+      console.error(`Safe Browsing API Error: HTTP ${res.status}`);
+      return { isThreat: false, reason: `API Error ${res.status}` };
     }
 
     const data = await res.json();
@@ -150,56 +129,59 @@ async function checkSafeBrowsingApi(targetUrl) {
     
     return {
       isThreat: isFlagged,
-      reason: isFlagged ? `Flagged as ${data.matches[0].threatType} threat.` : null
+      reason: isFlagged ? `Flagged as ${data.matches[0].threatType}` : null,
+      threatType: isFlagged ? data.matches[0].threatType : null
     };
   } catch (err) {
-    console.error('Network Error querying Safe Browsing API:', err);
+    console.error('Network error checking Safe Browsing API:', err);
     return { isThreat: false, reason: 'Network Failure' };
   }
 }
 
-/**
- * Manual scan handler called by popup.js
- */
 async function handleManualScan(url) {
   if (!isValidUrl(url)) {
-    return { success: false, error: 'Cannot scan internal or restricted browser pages.' };
+    return { success: false, error: 'Cannot scan restricted browser pages.' };
   }
 
   const heuristic = checkHeuristics(url);
   const apiResult = await checkSafeBrowsingApi(url);
 
   const isMalicious = heuristic.flagged || apiResult.isThreat;
-  const reason = heuristic.reason || apiResult.reason;
 
   return {
     success: true,
     url: url,
     isMalicious: isMalicious,
-    reason: reason
+    heuristicWarning: heuristic.flagged ? heuristic.reason : null,
+    threats: apiResult.isThreat ? [{ threatType: apiResult.threatType || apiResult.reason }] : []
   };
 }
 
-/**
- * UI Alerts & Badge Updates
- */
 function triggerThreatAlert(tabId, url, reason) {
-  const hostname = new URL(url).hostname;
+  try {
+    const hostname = new URL(url).hostname;
 
-  chrome.action.setBadgeText({ tabId, text: '!' });
-  chrome.action.setBadgeBackgroundColor({ tabId, color: '#D9534F' });
+    if (tabId) {
+      chrome.action.setBadgeText({ tabId, text: '!' });
+      chrome.action.setBadgeBackgroundColor({ tabId, color: '#D9534F' });
+    }
 
-  chrome.notifications.create(`baitsec-alert-${Date.now()}`, {
-    type: 'basic',
-    iconUrl: 'images/logo128.png',
-    title: '⚠️ BaitSec Security Alert',
-    message: `Suspicious domain detected: ${hostname}\nReason: ${reason}`,
-    priority: 2
-  });
+    chrome.notifications.create(`baitsec-${Date.now()}`, {
+      type: 'basic',
+      iconUrl: 'images/logo128.png',
+      title: '⚠️ BaitSec Alert',
+      message: `${hostname}\nReason: ${reason}`,
+      priority: 2
+    });
+  } catch (err) {
+    console.error('Alert error:', err);
+  }
 }
 
 function clearThreatAlert(tabId) {
-  chrome.action.setBadgeText({ tabId, text: '' });
+  if (tabId) {
+    chrome.action.setBadgeText({ tabId, text: '' });
+  }
 }
 
 function isValidUrl(url) {

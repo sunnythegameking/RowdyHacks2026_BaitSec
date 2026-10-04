@@ -3,205 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education - BaitSec</title>
-    <link rel="icon" type="image/png" href="images/BaitSecLogoOriginal.png">
+    <title>BaitSec</title>
+    <link rel="icon" type="image/png" href="images\BaitSecLogoOriginal.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Grid of Scam Cards -->
-    <div class="grid" data-v-69e7624b="">
-        
-        <!-- Card 1: Asking for money -->
-        <div class="scam-card" onclick="openModal('money-modal')" data-v-69e7624b="" data-v-addd6e36="">
-            <img onerror="this.setAttribute('data-error', 1)" width="200" height="200" loading="lazy" class="media" src="https://cdn.sanity.io/images/0dwew17x/production/f7bcba31a1019e5de56766291473afda87be41b5-1920x1080.jpg?crop=center&amp;hotspot=null&amp;w=400&amp;h=400&amp;fit=crop&amp;auto=format">
-            <span class="card-title">Asking for money</span>
+    <!-- Navigation/Top Banner -->
+      <div class="navbar">
+        <nav class="nav-container">
+          <div class="nav-links">
+            <a href="BaitSec.html"><img class="top_banner_pic" src="images/BaitSecLogoOriginal.png" alt="BaitSec logo"></a>
+            <div class="nav-links">
+            <div class="nav-links">
+              <a style="color: #b00a0a;" href="Baitsec.html">BaitSec</a>
+            </div>
+              <a style="color: #b00a0a; padding-left: 10px;" href="instructions.html">Get Extension</a>
+            </div>
+            <div class= "nav-links">
+              <a style="color: #b00a0a; padding-left: 10px;" href="https://github.com/sunnythegameking/RowdyHacks2026_BaitSec/tree/main">GitHub</a>
+            </div>
+          </div>
+          <div class="nav-links">
+            <div class="nav-links">
+              <a style="color: #b00a0a;" href="MeetTheDevs.html">Devs</a>
+            </div>
+            <div class="nav-links">
+              <a style="color: #b00a0a;" href="Education.html">Education</a>
+            </div>
+        </nav>
+      </div>
+    <!--What BaitSec Does-->
+    <div class="grid" style="padding-top: 100px;">
+        <div class="layout">
+            <h2>Keyword Search</h2>
+            <p>When activated, starts a scan of all keywords on the site. Words such as “money,” “bitcoin,” and other words commonly used in scams.</p>
         </div>
-
-        <!-- Card 2: Asking for personal information -->
-        <div class="scam-card" onclick="openModal('info-modal')" data-v-69e7624b="" data-v-addd6e36="">
-            <img onerror="this.setAttribute('data-error', 1)" width="200" height="200" loading="lazy" class="media" src="https://cdn.sanity.io/images/0dwew17x/production/9f24584b11101b05913c93609a9e4253a913bcbf-1920x1080.jpg?crop=center&amp;hotspot=null&amp;w=400&amp;h=400&amp;fit=crop&amp;auto=format">
-            <span class="card-title">Asking for personal information</span>
-        </div>
-
-        <!-- Card 3: Offering unexpected opportunities -->
-        <div class="scam-card" onclick="openModal('opportunities-modal')" data-v-69e7624b="" data-v-addd6e36="">
-            <img onerror="this.setAttribute('data-error', 1)" width="200" height="200" loading="lazy" class="media" src="https://cdn.sanity.io/images/0dwew17x/production/63b8bb1aabe1ef58b5fc67a3aaf6a8b9008fe329-1920x1080.jpg?crop=center&amp;hotspot=null&amp;w=400&amp;h=400&amp;fit=crop&amp;auto=format">
-            <span class="card-title">Offering unexpected opportunities</span>
-        </div>
-
-        <!-- Card 4: Sending unsolicited messages -->
-        <div class="scam-card" onclick="openModal('unsolicited-modal')" data-v-69e7624b="" data-v-addd6e36="">
-            <img onerror="this.setAttribute('data-error', 1)" width="200" height="200" loading="lazy" class="media" src="https://cdn.sanity.io/images/0dwew17x/production/bd889096591ca54fbb01e85350cc4c56c0db5d39-1920x1080.jpg?crop=center&amp;hotspot=null&amp;w=400&amp;h=400&amp;fit=crop&amp;auto=format">
-            <span class="card-title">Sending unsolicited messages</span>
-        </div>
-
-    </div>
-
-
-    <!-- ==================== POPUP MODALS ==================== -->
-
-    <!-- Modal 1: Asking for Money -->
-    <div id="money-modal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'money-modal')">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('money-modal')">&times;</span>
-            <h2>Asking for Money</h2>
-            <p>
-                Task scams usually start with an unexpected text offering online work. 
-                They say you can “make good money” by “product boosting” or doing “optimization tasks” online. 
-                Once you complete each task, you’ll see an ever-increasing tally of supposed earnings in the app. (They’re fake.) 
-                At some point, the app or online platform will ask you to deposit your own money — usually in crypto — to complete your next set of tasks and to get your supposed (fake) earnings out of the app. 
-                But if you make the deposit, not only is your real money is gone, you’ll never get those fake earnings.
-            </p>
-            <ul>
-                <li>Ignore generic and unexpected texts or WhatsApp messages about jobs. Real employers will never contact you that way.</li>
-                <li>Never pay anyone to get paid, or to get a job. That’s a sure sign of a scam.</li>
-                <li>Don’t trust anyone who says they’ll pay you to rate or like things online. That’s illegal and no honest company will do it.</li>
-            </ul>
-
-            <h3>Key Signs</h3>
-            <ul>
-                <li>Urgency to hurry up and make the transaction</li>
-                <li>Strange payment method like crypto, gift card, or do it over the wire</li>
-                <li>Impersonating your friends or loved ones</li>
-                <li>Making Excuses on why they need the money</li>
-            </ul>
-
-            <h3>Ways to prevent scams</h3>
-            <ul>
-                <li>Put your phone on the Do Not Call list: <a href="https://www.donotcall.gov" target="_blank">DO NOT CALL REGISTRY</a></li>
-                <li>Report Fraud here: <a href="https://reportfraud.ftc.gov" target="_blank">FRAUD REPORT</a></li>
-                <li>Never send money over the phone; always in person at a trusted bank.</li>
-            </ul>
+        <div class="layout">
+            <h2>Enforce HTTPS</h2>
+            <p>When activated, automatically transfers your connection from HTTP to HTTPS. This allows for a more secure connection to the web.</p>
         </div>
     </div>
-
-    <!-- Modal 2: Asking for Personal Information -->
-    <div id="info-modal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'info-modal')">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('info-modal')">&times;</span>
-            <h2>Asking for Personal Information</h2>
-            <p>
-                Personal information scams usually start with an unexpected text, email, or call claiming there is an urgent problem with one of your accounts. 
-                They say you must "verify your identity" or "confirm your details" immediately to unlock your account or avoid a fine. 
-                Once you click their link, you'll see a professional-looking website or form that asks for your Social Security number, password, or banking codes. (They're fake.) 
-                At some point, the platform will use those details to lock you out of your real accounts or open fraudulent credit lines in your name. 
-                But if you fill out the form, not only is your private data compromised, you'll never regain control of the security breach.
-            </p>
-            <ul>
-                <li>Ignore generic and unexpected alerts about account suspensions, tax issues, or package deliveries. Real companies will never ask you to resolve security issues through text links.</li>
-                <li>Never share one-time passcodes or PINs with anyone, even if they claim to be a customer service representative. That's a sure sign of a scam.</li>
-                <li>Don't trust anyone who asks for government IDs or financial details over social media or unverified chat apps. No honest organization operates that way.</li>
-            </ul>
-
-            <h3>Key Signs</h3>
-            <ul>
-                <li><strong>Mismatched Links or Emails:</strong> The sender's email address looks slightly off (e.g., support@paypa1-security.com instead of paypal.com), or the website URL doesn't match the actual company name.</li>
-                <li><strong>Generic Greetings:</strong> The message addresses you as "Dear Customer" or "Valued Member" rather than using your actual name, because scammers blast these messages to thousands of people at once.</li>
-                <li><strong>Requests for Security Data:</strong> They explicitly ask for things a real company will never ask you to reveal, such as passwords, PINs, or one-time verification codes sent to your phone.</li>
-            </ul>
-
-            <h3>Ways to prevent scams</h3>
-            <ul>
-                <li>Put your phone on the Do Not Call list: <a href="https://www.donotcall.gov" target="_blank">DO NOT CALL REGISTRY</a></li>
-                <li>Never send personal details over the phone or in an email if someone asks for it.</li>
-                <li>Check Your Credit every now and then to make sure no one has opened anything on your credit.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Modal 3: Offering Unexpected Opportunities -->
-    <div id="opportunities-modal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'opportunities-modal')">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('opportunities-modal')">&times;</span>
-            <h2>Offering Unexpected Opportunities</h2>
-            <p>
-                Unexpected opportunity scams usually start with an unexpected text, email, or social media DM offering an exclusive financial windfall. 
-                They say you have “won a major sweepstakes,” “qualified for a government grant,” or been selected for an “exclusive investment loop” that guarantees massive returns. 
-                Once you engage, they’ll show you professional-looking documents, fake certificates, or digital balances showing your supposed wealth. (They’re fake.) 
-                At some point, the organizer will ask you to pay an upfront fee — usually for "taxes," "processing," or "customs clearance" — before they can release your money. 
-                But if you pay that fee, not only is your money gone, you’ll never see a dime of that promised fortune.
-            </p>
-
-            <h3>Key Signs</h3>
-            <ul>
-                <li><strong>You Didn't Enter:</strong> You receive an announcement for a lottery, contest, or draw that you have no memory of entering or participating in.</li>
-                <li><strong>Guaranteed Returns:</strong> They offer an investment, crypto pool, or betting system and promise 100% guaranteed profits with "zero risk."</li>
-                <li><strong>Secrecy Requests:</strong> The person tells you to keep the opportunity a secret from your family, friends, or bank tellers so they don't "steal your spot."</li>
-            </ul>
-
-            <h3>Ways to prevent scams</h3>
-            <ul>
-                <li><strong>Delete and Block:</strong> Do not reply to unexpected messages offering money, grants, or investments. Replying lets scammers know your number is active.</li>
-                <li><strong>Verify Through Official Channels:</strong> If a message claims to be from a real agency (like the government or a major brand), look up their official contact info independently. Never use the links or phone numbers provided in the message.</li>
-                <li><strong>Keep Your Money in Your Pocket:</strong> Never pay upfront fees, taxes, or processing charges to claim a prize or start an investment. Legitimate windfalls always deduct fees from the payout.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Modal 4: Sending Unsolicited Messages -->
-    <div id="unsolicited-modal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'unsolicited-modal')">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('unsolicited-modal')">&times;</span>
-            <h2>Sending Unsolicited Messages</h2>
-            <p>
-                Getting unsolicited messages usually starts with an unexpected text, WhatsApp chat, or email from an unknown number or someone pretending to have dialed the wrong person. 
-                They say something casual like “Is this [Name]?” or offer an accidental greeting to spark a conversation. 
-                Once you reply, they will quickly shift to acting overly friendly, sharing attractive photos, or introducing a "business partner" who makes easy money. (They’re fake.) 
-                At some point, the stranger will try to move the conversation to an unmonitored app or convince you to visit a specific platform to invest or buy a service. 
-                But if you keep engaging, not only will they exploit your trust, you’ll eventually be funneled into a financial or identity scam.
-            </p>
-            <ul>
-                <li>Ignore generic and unexpected greetings from numbers you do not recognize. Real people trying to reach a friend will realize their mistake and stop messaging rather than trying to build a new relationship.</li>
-                <li>Never reply to opt-out of text spam (like texting "STOP") unless it is a verified, short-code marketing message from a brand you actually use. Replying to a scammer just proves your number is active.</li>
-                <li>Don’t trust anyone who moves you to a different app like Telegram, WhatsApp, or Line right after making contact. Honest professionals and legitimate businesses do not rely on random personal chat accounts to find clients.</li>
-            </ul>
-
-            <h3>Key Signs</h3>
-            <ul>
-                <li><strong>The "Wrong Number" Hook:</strong> The sender pretends they meant to text someone else but uses it as an excuse to keep chatting with you anyway.</li>
-                <li><strong>Suspicious Link Shorteners:</strong> The message includes cropped or unusual links (like bit.ly, tinyurl, or completely random letter combinations) to hide the real destination.</li>
-                <li><strong>Vague Job or Cash Offers:</strong> It promises high pay or free items for minimal effort without explaining what the actual company is.</li>
-            </ul>
-
-            <h3>Ways to prevent scams</h3>
-            <ul>
-                <li><strong>Use Your Phone's Built-in Filters:</strong> Enable "Filter Unknown Senders" on iOS or "Spam Protection" on Android to automatically catch these messages before they hit your main inbox.</li>
-                <li><strong>Report and Block Instantly:</strong> Use your app's built-in tool to report the message as spam. On mobile networks, you can also forward spam texts directly to 7726 (SPAM) to alert your carrier.</li>
-                <li><strong>Hide Your Contact Details:</strong> Avoid posting your phone number or primary email address publicly on social media, marketplace listings, or unverified online forums where scrapers can steal them.</li>
-            </ul>
-        </div>
-    </div>
-
-
-    <!-- JavaScript to Handle Opening/Closing Popups -->
-    <script>
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevents scrolling the background page while popup is open
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = ''; // Restores background scrolling
-        }
-
-        function closeModalOnOverlay(event, id) {
-            // Close the popup if user clicks outside the modal box
-            if (event.target.classList.contains('modal-overlay')) {
-                closeModal(id);
-            }
-        }
-
-        // Close active popup when Escape key is pressed
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const activeModal = document.querySelector('.modal-overlay.active');
-                if (activeModal) {
-                    closeModal(activeModal.id);
-                }
-            }
-        });
-    </script>
+    <!--How does the extension Work-->
+    <h1>How does our extension work</h1>
+    <!--Bullent points for how our extentions work-->
+    <ul>
+        <li>
+            New webpage = new scan
+        </li>
+        <li>
+            Key words:
+         <ul style="list-style-type: circle;">
+                <li>
+                    Money
+                </li>
+                <li>   
+                    Bitcoin
+                </li>
+                <li>
+                    Pay
+                </li>
+                <li>
+                    Credit Card
+                </li>
+        </ul>
+        </li>
+        <li>
+            Extension scans URL -> sends to website checker
+        </li>
+        <li>
+            Website checker confirms if safe
+        </li>
+    </ul>
 </body>
 </html>

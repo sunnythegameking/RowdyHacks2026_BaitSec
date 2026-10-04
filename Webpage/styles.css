@@ -219,7 +219,7 @@ nav a:hover {
 .nav-links {
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 1vh;
   color: #B00A0A;
 }
 
